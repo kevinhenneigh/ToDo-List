@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
     <link rel="stylesheet" href="/css/site.css">
-    <link href="dist/rome.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
 </head>
 <header>Gotta Git 'Er Done</header>
 <body>
@@ -17,7 +17,7 @@
     <br>
 
     <label for="due">Due</label>
-    <input type="text" id="due">
+    <input type="text" id="flatpickr"> 
     <span>*</span>
     <br>
     
@@ -26,6 +26,12 @@
     <br> 
     
     <input type="button" value="Add item to list">
-    <script src="dist/rome.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr">
+    </script>
+    <script>    
+        var example = flatpickr("#flatpickr");
+    </script>    
+      
 </body>
 </html>
