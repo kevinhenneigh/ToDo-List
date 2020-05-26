@@ -17,6 +17,7 @@ function isAllValid() {
     var isValid = true;
     var title = getInputById("title").value;
     var errTitle = document.getElementById("errTitle");
+    errTitle.innerText = "";
     if (title == "") {
         isValid = false;
         errTitle.innerText =
@@ -24,12 +25,13 @@ function isAllValid() {
     }
     var due = getInputById("flatpickr").value;
     var errDate = document.getElementById("errDate");
+    errDate.innerText = "";
     if (due == "") {
         isValid = false;
         errDate.innerText =
             "When are you gonna get 'er done? Please give a due date";
     }
-    return true;
+    return isValid;
 }
 function getToDoItem() {
     var item = new ToDoItem();

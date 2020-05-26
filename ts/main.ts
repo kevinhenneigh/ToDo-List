@@ -28,6 +28,7 @@ function isAllValid():boolean{
     // Check for a Title
     let title = getInputById("title").value;
     let errTitle = document.getElementById("errTitle")
+    errTitle.innerText = "";
     if(title == ""){
         isValid = false;
         errTitle.innerText = 
@@ -36,12 +37,13 @@ function isAllValid():boolean{
     // Check for a due date
     let due = getInputById("flatpickr").value;
     let errDate = document.getElementById("errDate")
+    errDate.innerText = "";
     if(due == ""){
         isValid = false;
         errDate.innerText = 
             "When are you gonna get 'er done? Please give a due date";
     }
-    return true;
+    return isValid;
 }
 
 /**
