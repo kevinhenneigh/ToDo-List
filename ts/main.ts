@@ -81,6 +81,8 @@ function displayToDoItem(item:ToDoItem):void{
 
     // Decides whether item is placed in complete or incomplete <div>
     let itemDiv = document.createElement("div");
+    itemDiv.onclick = markAsComplete;
+    itemDiv.classList.add("todo");
     if(item.done){
         itemDiv.classList.add("complete");
     }
@@ -105,6 +107,15 @@ function displayToDoItem(item:ToDoItem):void{
 function getInputById(id:string):HTMLInputElement{
     return <HTMLInputElement>document.getElementById(id);
 }
+
+function markAsComplete(){
+    let itemDiv = <HTMLElement>this;
+    itemDiv.classList.add("complete");
+
+    let completeItems = document.getElementById("complete");
+    completeItems.appendChild(itemDiv);
+}
+
 
 // Allow user to mark item as completed
 

@@ -1,0 +1,20 @@
+.todo{
+    width: 20%;
+    box-sizing: border-box;
+    background-color: aqua;
+    padding: .5em;
+    border-radius: .5em;
+    text-align: center;
+    margin: 1em;
+}
+.todo h2{
+    margin: 0px;
+}
+.todo p{
+    margin: 0px;
+
+}
+.complete{
+    opacity: 40%;
+    background-color: orchid;
+}
