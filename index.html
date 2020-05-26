@@ -6,33 +6,37 @@
     <title>To Do List</title>
     <link rel="stylesheet" href="/css/site.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="/js/main.js"></script>
 </head>
 <header>Gotta Git 'Er Done</header>
 <body>
     <h1>ToDo:</h1>
-    <form>
-        <label for="title">Title</label>
-        <input type="text" id="title">
-        <span data-required id="title-span">*</span>
-        <br>
+    <label for="title">Title</label>
+    <input type="text" id="title">
+    <span id="errTitle">*</span>
+    <br>
 
-        <label for="due">Due</label>
-        <input type="text" id="flatpickr"> 
-        <span data-required id="date-span">*</span>
-        <br>
-        
-        <input type="checkbox">
-        <label for="done">Done</label>
-        <br> 
-        
-        <button type="button" value="Add item to list">
-    </form>    
-       
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr">
-    </script>
-    <script>    
-        var example = flatpickr("#flatpickr");
-    </script>    
+    <label for="due">Due</label>
+    <input type="text" id="flatpickr"> 
+    <span id="errDate">*</span>
+    <br>
+    
+    <input id="done" type="checkbox">
+    <label for="done">Done</label>
+    <br> 
+    
+    <input type="button" id="addItem" value="Add item to list">
+
+    <h2>Things that need tendin' to</h2>
+    <div id="incomplete"></div>
+    <div id="complete"></div>
+    
+    
+<script src="https://cdn.jsdelivr.net/npm/flatpickr">
+</script>
+<script>    
+    var example = flatpickr("#flatpickr");
+</script>    
       
 </body>
 </html>
