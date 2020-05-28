@@ -10,12 +10,19 @@ class ToDoItem{
 window.onload = function(){
     let addItem = document.getElementById("addItem");
     addItem.onclick = main;
+
+    loadSavedItem();
+}
+
+function loadSavedItem(){
+    let item = getToDo(); // Read from storage
 }
 
 function main(){
     if(isAllValid()){
         let item = getToDoItem();
         displayToDoItem(item);
+        saveToDo(item);
 
     }
 }
@@ -79,7 +86,9 @@ function displayToDoItem(item:ToDoItem):void{
 
     // Displays selected due date from form
     let itemDate = document.createElement("p");
-    itemDate.innerText = item.due.toDateString();
+    let dueDate = new Date(item.due.toString());
+    itemDate.innerText = dueDate.toDateString();
+
 
     // Decides whether item is placed in complete or incomplete <div>
     let itemDiv = document.createElement("div");
@@ -118,7 +127,21 @@ function markAsComplete(){
     completeItems.appendChild(itemDiv);
 }
 
-
-// Allow user to mark item as completed
-
 // Store ToDoItems in web storage
+
+function saveToDo(item:ToDoItem):void{
+    let itemString = JSON.stringify(item);
+
+    localStorage.setItem("todo", itemString);
+}
+
+const todokey = "todo";
+
+/**
+ * Get stored ToDo item or return null if none found
+ */
+function getToDo():ToDoItem{
+    let itemString = localStorage.getItem(todokey);
+    let item:ToDoItem = JSON.parse(itemString);
+    return item;
+}

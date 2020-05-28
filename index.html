@@ -8,15 +8,19 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <script src="/js/main.js"></script>
 </head>
-<header>Gotta Git 'Er Done</header>
+
+<header>
+    Gotta Git 'Er Done
+</header>
+
 <body>
     <h1>ToDo:</h1>
-    <label for="title">Title</label>
+    <label for="title">Whut Ya Doin'</label>
     <input type="text" id="title">
     <span id="errTitle">*</span>
     <br>
 
-    <label for="due">Due</label>
+    <label for="due">When Ya Doin'</label>
     <input type="text" id="flatpickr"> 
     <span id="errDate">*</span>
     <br>
@@ -27,16 +31,27 @@
     
     <input type="button" id="addItem" value="Add item to list">
 
-    <h2>Things that need tendin' to</h2>
-    <div id="incomplete"></div>
-    <div id="complete"></div>
-    
-    
-<script src="https://cdn.jsdelivr.net/npm/flatpickr">
-</script>
-<script>    
-    var example = flatpickr("#flatpickr");
-</script>    
+    <div class="row">
+        <div class="column">
+            <h2>Gotta Git 'Er Done</h2>
+            <div id="incomplete"></div>
+        </div>
+        <div class="column">
+            <h2>Done Did 'Er</h2>
+            <div id="complete"></div>
+        </div>
+    </div>    
+        
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr">
+    </script>
+    <script>    
+        var example = flatpickr("#flatpickr");
+    </script>    
       
 </body>
+
+<footer>
+    Kevin Henneigh CPTC 3rd Quarter Spring 2020
+</footer>
+
 </html>

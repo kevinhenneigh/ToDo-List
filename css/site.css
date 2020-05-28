@@ -1,20 +1,21 @@
+
+.row {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  
+  .column {
+    flex: 50%;
+  }
+
 .todo{
-    width: 20%;
+    cursor: crosshair;
     box-sizing: border-box;
     background-color: aqua;
-    padding: .5em;
+    padding: .25em;
     border-radius: .75em;
     text-align: center;
     margin: 1em;
-}
-
-.todo h2{
-    margin: 0px;
-}
-
-.todo p{
-    margin: 0px;
-    cursor: crosshair;
 }
 
 .complete{
@@ -24,16 +25,49 @@
 }
 
 #complete{
-    border: 1px dashed black;
+    border: 1px solid black;
+    
 }
 
 #incomplete{
-  border: 1px solid black;  
-  margin-bottom: 1em;
+    border: 1px solid black;  
+    margin-bottom: 1em;
 }
 
 header{
+    border: 1px solid black;
+    border-radius: .3em;
+    background-color: rgb(150, 148, 148);
+    padding: 10px;
     text-align: center;
-    font-size: xx-large;
+    font-size: 40px;
     font-weight: bolder;
 }
+
+footer{
+    text-align: center;
+    background-color: rgb(168, 167, 167);
+    margin-top: 1.5em;
+    border: 1px solid black;
+    border-radius: .3em;
+}
+
+title, due, done{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#complete,
+#incomplete{
+    display: flex; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center; 
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+    }
+  }
+
