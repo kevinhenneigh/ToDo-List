@@ -137,7 +137,7 @@ function markAsComplete(){
 function saveToDo(item:ToDoItem):void{
     let currItems = getToDoItems();
     if(currItems == null){         // No items found
-        currItems = new Array(); 
+        currItems = new Array();   // Make new Array
     }
     currItems.push(item);          // Add the new item to currItem list
 
